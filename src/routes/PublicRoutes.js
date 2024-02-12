@@ -6,8 +6,8 @@ import { getAccount } from "../services/api";
 import { LoadingOutlined } from "@ant-design/icons";
 import { Spin } from "antd";
 import UserLayout from "../layout/UserLayout";
-import LoginSignup from "../pages/Welcome/LoginSignup";
-import Welcome from "../pages/Welcome";
+import LoginSignup from "../pages/Auth/LoginSignup";
+import Welcome from "../pages/Auth";
 
 const antIcon = <LoadingOutlined style={{ fontSize: 100 }} spin />;
 
@@ -62,15 +62,8 @@ const PublicRoutes = () => {
   return (
     <>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <UserLayout />
-          }
-        >
-          <Route index element={<Home />} />
-          <Route path="home" element={<PublicRoute component={Home} />} />
-        </Route>
+        <Route path="/" element={<UserLayout ><PublicRoute component={Home} /></UserLayout>} />
+        <Route path="/home" element={<UserLayout ><PublicRoute component={Home} /></UserLayout>} />
         <Route path="auth/*" element={<Welcome />} />
       </Routes>
     </>

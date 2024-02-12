@@ -99,75 +99,71 @@ export default function Welcome(props) {
   return (
     <div>
       {loading && <StyledLoader />}
-      <Row>
-        <Col className="left-side" span={isMobile ? 24 : 12}>
-          <Row className="logo-container">
-            <div className="logo">
-              <img src="assets/logo.svg" alt="sabhi" className="light" />
-              <img src="assets/sabhi.svg" alt="sabhi" />
-            </div>
-          </Row>
-          <Row>
-            <Col
-              className="back-container"
-              onClick={() => backHandler(showPage)}
-            >
-              {showPage !== "login" && (
-                <>
-                  <img src="assets/back.svg" alt="back" />
-                  <Text className="back-text">Back</Text>
-                </>
-              )}
-            </Col>
-          </Row>
+      <Row className="h-screen items-center">
+        <Col style={{ background: "#1D6E7130" }} className="h-screen flex items-center justify-center" span={isMobile ? 24 : 12}>
+          <div >
+            <Row>
+              <Col
+                className="back-container"
+                onClick={() => backHandler(showPage)}
+              >
+                {showPage !== "login" && (
+                  <>
+                    <img src="assets/back.svg" alt="back" />
+                    <Text className="back-text">Back</Text>
+                  </>
+                )}
+              </Col>
+            </Row>
 
-          {showPage === "forgotPassword" && (
-            <Row justify="center">
-              <ForgetPassword
-                resetPassword={forgetPassword}
-                setShowPage={setShowPage}
-              />
-            </Row>
-          )}
-          {showPage === "login" && (
-            <Row justify="center">
-              <LoginSignup
-                type={type}
-                setType={setType}
-                setShowPage={setShowPage}
-                login={login}
-                signup={signup}
-                company={company}
-                email={email}
-              />
-            </Row>
-          )}
-          {showPage === "verification" && (
-            <Row justify="center">
-              <Verification setShowPage={setShowPage} />
-            </Row>
-          )}
-          {showPage === "create-new-password" && (
-            <Row justify="center">
-              <CreateNewPassword
-                createNewPassword={createNewPassword}
-                setShowPage={setShowPage}
-              />
-            </Row>
-          )}
-          {showPage === "congratulations" && (
-            <Row justify="center">
-              <Congratulations setShowPage={setShowPage} />
-            </Row>
-          )}
-          {showPage === "verificationSent" && (
-            <Row justify="center">
-              <VerificationSent setShowPage={setShowPage} />
-            </Row>
-          )}
+            {showPage === "forgotPassword" && (
+              <Row justify="center">
+                <ForgetPassword
+                  resetPassword={forgetPassword}
+                  setShowPage={setShowPage}
+                />
+              </Row>
+            )}
+            {showPage === "login" && (
+              <Row justify="center">
+                <LoginSignup
+                  type={type}
+                  setType={setType}
+                  setShowPage={setShowPage}
+                  login={login}
+                  signup={signup}
+                  company={company}
+                  email={email}
+                />
+              </Row>
+            )}
+            {showPage === "verification" && (
+              <Row justify="center">
+                <Verification setShowPage={setShowPage} />
+              </Row>
+            )}
+            {showPage === "create-new-password" && (
+              <Row justify="center">
+                <CreateNewPassword
+                  createNewPassword={createNewPassword}
+                  setShowPage={setShowPage}
+                />
+              </Row>
+            )}
+            {showPage === "congratulations" && (
+              <Row justify="center">
+                <Congratulations setShowPage={setShowPage} />
+              </Row>
+            )}
+            {showPage === "verificationSent" && (
+              <Row justify="center">
+                <VerificationSent setShowPage={setShowPage} />
+              </Row>
+            )}
+          </div>
         </Col>
         {!isMobile && (
-          <Col align="center" justify="center" className="right-side" span={12}>
+          <Col align="center" justify="center" className="h-screen flex items-center" span={12}>
             {showPage === "forgotPassword" ? (
               <img src="assets/rafiki2.svg" alt="sabhi" />
             ) : (

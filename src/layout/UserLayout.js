@@ -25,7 +25,7 @@ const { Text } = Typography;
 const { useToken } = theme;
 
 const UserLayout = ({ children }) => {
-  const [primary, setPrimary] = useState("#0866C5"); // Corrected initial color
+  const [primary, setPrimary] = useState("#1D6E71"); // Corrected initial color
   const [relatedColors, setRelatedColors] = useState({
     mainColor: primary,
     lighter: generateRelatedColorsWithTextContrast(primary).lighter,
@@ -105,7 +105,7 @@ const UserLayout = ({ children }) => {
     } else {
       textContrastColor =
         calculateContrastRatio(mainColor, lighter) >
-        calculateContrastRatio(mainColor, darker)
+          calculateContrastRatio(mainColor, darker)
           ? lighter
           : darker;
     }
