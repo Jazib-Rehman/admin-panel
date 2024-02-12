@@ -7,12 +7,11 @@ import CreateNewPassword from "./CreateNewPassword";
 import Congratulations from "./Congratulation";
 
 import { Row, Col, Typography, message } from "antd";
-import { useHistory, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import { AuthContext } from "../../context/Auth";
-import { CustomeLoader, StyledLoader } from "../../components/loader";
+import { StyledLoader } from "../../components/loader";
 import { isMobile } from "react-device-detect";
-import ErrorList from "antd/lib/form/ErrorList";
 import VerificationSent from "./verificationSent";
 
 const { Text } = Typography;

@@ -62,21 +62,16 @@ const PublicRoutes = () => {
   return (
     <>
       <Routes>
-        {/* Wrap the routes under "/" with UserLayout */}
         <Route
           path="/"
           element={
-            <UserLayout>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="home" element={<PublicRoute component={Home} />} />
-              </Routes>
-            </UserLayout>
+            <UserLayout />
           }
-        />
-
-        {/* Routes under "/auth" without UserLayout */}
-        <Route path="/auth" element={<Welcome />} />
+        >
+          <Route index element={<Home />} />
+          <Route path="home" element={<PublicRoute component={Home} />} />
+        </Route>
+        <Route path="auth/*" element={<Welcome />} />
       </Routes>
     </>
   );
