@@ -1,0 +1,128 @@
+.right-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #e6fffb;
+}
+
+.left-side {
+  height: 100vh;
+  position: relative;
+  background: #ffffff;
+}
+
+@media screen and (max-width: 767px) {
+  .right-side {
+    display: none;
+  }
+
+  .left-side {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: #ffffff;
+  }
+
+  .ant-col-12 {
+    flex: 0
+      0
+      100%;
+    max-width: 90%;
+  }
+}
+
+.logo {
+  flex: none;
+  margin: 16px
+    0
+    16px
+    0px;
+  padding: 4px;
+}
+
+.light {
+  width: 27px;
+  height: 36px;
+  margin-right: 15px;
+}
+
+.container {
+  width: 290px;
+}
+
+.logo-container {
+  height: 48px;
+  width: 48px;
+  margin-left: 68px;
+}
+
+.back-text {
+  font-size: 14px;
+  margin-left: 10px;
+  color: #1890ff;
+}
+
+.back-container {
+  margin-top: 24px;
+  margin-left: 120px;
+  margin-bottom: 29px;
+  cursor: pointer;
+}
+
+.padding-bottom {
+  padding-bottom: 24px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.remember-me {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.ant-tabs-top
+  > .ant-tabs-nav::before,
+.ant-tabs-bottom
+  > .ant-tabs-nav::before,
+.ant-tabs-top
+  > div
+  > .ant-tabs-nav::before,
+.ant-tabs-bottom
+  > div
+  > .ant-tabs-nav::before {
+  position: relative;
+}
+
+.verifyCode {
+  width: 40px;
+}
+
+.OTP {
+  box-sizing: border-box;
+  width: 40;
+  height: 40;
+  padding: 15;
+  background: #ffffff;
+  border: 1px
+    solid
+    #d9d9d9;
+  border-radius: 2px;
+  outline: none;
+}
+
+.backButton {
+  display: flex;
+  justify-content: start;
+  border: 1px
+    dashed
+    orange;
+}
+
+.ant-input-number-handler {
+  display: none;
+}
