@@ -8,6 +8,8 @@ import { Spin } from "antd";
 import UserLayout from "../layout/UserLayout";
 import LoginSignup from "../pages/Auth/LoginSignup";
 import Welcome from "../pages/Auth";
+import Dashboard from "../pages/Admin/Dashboard";
+import AdminLayout from "../layout/AdminLayout";
 
 const antIcon = <LoadingOutlined style={{ fontSize: 100 }} spin />;
 
@@ -64,7 +66,8 @@ const PublicRoutes = () => {
       <Routes>
         <Route path="/" element={<UserLayout ><PublicRoute component={Home} /></UserLayout>} />
         <Route path="/home" element={<UserLayout ><PublicRoute component={Home} /></UserLayout>} />
-        <Route path="auth/*" element={<Welcome />} />
+        <Route path="/admin/dashboard" element={<AdminLayout><Dashboard /></AdminLayout>} />
+        <Route path="/auth" element={<Welcome />} />
       </Routes>
     </>
   );

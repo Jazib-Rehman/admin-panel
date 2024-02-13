@@ -31,11 +31,12 @@ export default function Welcome(props) {
 
   const login = (data) => {
     setLoading(true);
-    auth.signIn(
-      data,
-      () => navigate(from),
-      () => setLoading(false)
-    );
+    navigate("/")
+    // auth.signIn(
+    //   data,
+    //   () => navigate(from),
+    //   () => setLoading(false)
+    // );
   };
 
   const signup = async (values) => {
@@ -43,6 +44,7 @@ export default function Welcome(props) {
       setLoading(true);
       try {
         console.log({ values });
+        navigate("/")
       } catch (error) {
         setLoading(false);
         console.log({ error });
@@ -101,23 +103,23 @@ export default function Welcome(props) {
       {loading && <StyledLoader />}
       <Row className="h-screen items-center">
         <Col style={{ background: "#1D6E7130" }} className="h-screen flex items-center justify-center" span={isMobile ? 24 : 12}>
-          <div >
+          <div className="w-1/2">
             <Row>
               <Col
-                className="back-container"
+                className="cursor-pointer"
                 onClick={() => backHandler(showPage)}
               >
                 {showPage !== "login" && (
-                  <>
+                  <div className="w-12 flex items-center justify-between">
                     <img src="assets/back.svg" alt="back" />
                     <Text className="back-text">Back</Text>
-                  </>
+                  </div>
                 )}
               </Col>
             </Row>
 
             {showPage === "forgotPassword" && (
-              <Row justify="center">
+              <Row className="w-full" justify="center">
                 <ForgetPassword
                   resetPassword={forgetPassword}
                   setShowPage={setShowPage}
@@ -125,7 +127,7 @@ export default function Welcome(props) {
               </Row>
             )}
             {showPage === "login" && (
-              <Row justify="center">
+              <Row className="w-full" justify="center">
                 <LoginSignup
                   type={type}
                   setType={setType}
@@ -138,12 +140,12 @@ export default function Welcome(props) {
               </Row>
             )}
             {showPage === "verification" && (
-              <Row justify="center">
+              <Row className="w-full" justify="center">
                 <Verification setShowPage={setShowPage} />
               </Row>
             )}
             {showPage === "create-new-password" && (
-              <Row justify="center">
+              <Row className="w-full" justify="center">
                 <CreateNewPassword
                   createNewPassword={createNewPassword}
                   setShowPage={setShowPage}
@@ -151,12 +153,12 @@ export default function Welcome(props) {
               </Row>
             )}
             {showPage === "congratulations" && (
-              <Row justify="center">
+              <Row className="w-full" justify="center">
                 <Congratulations setShowPage={setShowPage} />
               </Row>
             )}
             {showPage === "verificationSent" && (
-              <Row justify="center">
+              <Row className="w-full" justify="center">
                 <VerificationSent setShowPage={setShowPage} />
               </Row>
             )}

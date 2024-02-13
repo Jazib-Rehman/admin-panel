@@ -46,7 +46,7 @@ function LoginSignup({
   }, []);
 
   return (
-    <div>
+    <div className="w-full">
       <Col>
         <Tabs activeKey={type} size="large" onChange={setType} centered>
           <Tabs.TabPane key="login" tab="Login" />
@@ -97,7 +97,7 @@ function LoginSignup({
                 </Text>
               </a>
             </div>
-            <Button type="primary" htmlType="submit" className="full-width">
+            <Button type="primary" htmlType="submit" className="mt-4 full-width">
               Login
             </Button>
           </Form>

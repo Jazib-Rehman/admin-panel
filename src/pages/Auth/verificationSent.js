@@ -13,7 +13,7 @@ function VerificationSent({ setShowPage }) {
                     <TabPane key="verification" tab="Verification" />
                 </Tabs>
             </Row>
-            <Row className="container">
+            <Row justify="center" className="container">
                 <Col>
                     <div className="padding-bottom">
                         <Text>
@@ -21,7 +21,7 @@ function VerificationSent({ setShowPage }) {
                         </Text>
                     </div>
                 </Col>
-                <Button onClick={() => setShowPage("login")} type="primary" htmlType="submit" className="full-width">
+                <Button onClick={() => setShowPage("login")} type="primary" htmlType="submit" className="mt-4 full-width">
                     Back to Login
                 </Button>
                 <Col style={{ display: "flex", justifyContent: "space-between", width: "100%", marginTop: "20px" }}>

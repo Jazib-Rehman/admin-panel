@@ -13,7 +13,7 @@ function CreateNewPassword({ setShowPage, createNewPassword }) {
 	};
 
 	return (
-		<div>
+		<div className='w-full'>
 			<Row justify="center" className="padding-bottom">
 				<Tabs size="large" centered>
 					<TabPane key="Create new password" tab="Create new password" />
@@ -21,7 +21,7 @@ function CreateNewPassword({ setShowPage, createNewPassword }) {
 			</Row>
 			<Row className="container">
 				{
-					linkSent ?
+					!linkSent ?
 						<Col>
 							<div className="padding-bottom">
 								<Text>
@@ -29,10 +29,10 @@ function CreateNewPassword({ setShowPage, createNewPassword }) {
 								</Text>
 							</div>
 
-							<Button type="primary" onClick={() => setShowPage("login")} className="full-width">
+							<Button type="primary" onClick={() => setShowPage("login")} className="mt-4 full-width">
 								Back to Login
 							</Button>
-							<Col style={{ display: "flex", justifyContent: "space-between", width: "100%", marginTop: "20px" }}>
+							<Col style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%", marginTop: "20px" }}>
 								<Text>
 									Did not recieve email?
 								</Text>
@@ -45,7 +45,7 @@ function CreateNewPassword({ setShowPage, createNewPassword }) {
 							</Col>
 						</Col>
 						:
-						<Col>
+						<Col className='w-full'>
 							<Form name="nest-messages" className="container"
 								onFinish={onFinish}
 							>
