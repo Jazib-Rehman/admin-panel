@@ -1,0 +1,477 @@
+[
+    {
+        "name": "China",
+        "year": "2000",
+        "gdp": 605.24
+    },
+    {
+        "name": "China",
+        "year": "2001",
+        "gdp": 865.3
+    },
+    {
+        "name": "China",
+        "year": "2002",
+        "gdp": 981.55
+    },
+    {
+        "name": "China",
+        "year": "2003",
+        "gdp": 662.68
+    },
+    {
+        "name": "China",
+        "year": "2004",
+        "gdp": 63.27
+    },
+    {
+        "name": "China",
+        "year": "2005",
+        "gdp": 360.54
+    },
+    {
+        "name": "China",
+        "year": "2006",
+        "gdp": 355.16
+    },
+    {
+        "name": "China",
+        "year": "2007",
+        "gdp": 238.25
+    },
+    {
+        "name": "China",
+        "year": "2008",
+        "gdp": 763.08
+    },
+    {
+        "name": "China",
+        "year": "2009",
+        "gdp": 883.45
+    },
+    {
+        "name": "China",
+        "year": "2010",
+        "gdp": 421.24
+    },
+    {
+        "name": "China",
+        "year": "2011",
+        "gdp": 597.77
+    },
+    {
+        "name": "China",
+        "year": "2012",
+        "gdp": 141.76
+    },
+    {
+        "name": "China",
+        "year": "2013",
+        "gdp": 739.79
+    },
+    {
+        "name": "China",
+        "year": "2014",
+        "gdp": 3237.6
+    },
+    {
+        "name": "China",
+        "year": "2015",
+        "gdp": 2468.9
+    },
+    {
+        "name": "China",
+        "year": "2016",
+        "gdp": 9350.6
+    },
+    {
+        "name": "China",
+        "year": "2017",
+        "gdp": 8186.1
+    },
+    {
+        "name": "China",
+        "year": "2018",
+        "gdp": 4637.9
+    },
+    {
+        "name": "United States",
+        "year": "2000",
+        "gdp": 4000
+    },
+    {
+        "name": "United States",
+        "year": "2001",
+        "gdp": 9000
+    },
+    {
+        "name": "United States",
+        "year": "2002",
+        "gdp": 3456
+    },
+    {
+        "name": "United States",
+        "year": "2003",
+        "gdp": 8000
+    },
+    {
+        "name": "United States",
+        "year": "2004",
+        "gdp": 7000
+    },
+    {
+        "name": "United States",
+        "year": "2005",
+        "gdp": 9000
+    },
+    {
+        "name": "United States",
+        "year": "2006",
+        "gdp": 4000
+    },
+    {
+        "name": "United States",
+        "year": "2007",
+        "gdp": 34560
+    },
+    {
+        "name": "United States",
+        "year": "2008",
+        "gdp": 3456
+    },
+    {
+        "name": "United States",
+        "year": "2009",
+        "gdp": 3456
+    },
+    {
+        "name": "United States",
+        "year": "2010",
+        "gdp": 7000
+    },
+    {
+        "name": "United States",
+        "year": "2011",
+        "gdp": 4000
+    },
+    {
+        "name": "United States",
+        "year": "2012",
+        "gdp": 9000
+    },
+    {
+        "name": "United States",
+        "year": "2013",
+        "gdp": 34560
+    },
+    {
+        "name": "United States",
+        "year": "2014",
+        "gdp": 4000
+    },
+    {
+        "name": "United States",
+        "year": "2015",
+        "gdp": 4000
+    },
+    {
+        "name": "United States",
+        "year": "2016",
+        "gdp": 5000
+    },
+    {
+        "name": "United States",
+        "year": "2017",
+        "gdp": 3000
+    },
+    {
+        "name": "United States",
+        "year": "2018",
+        "gdp": 6936.5
+    },
+    {
+        "name": "United Kingdom",
+        "year": "2000",
+        "gdp": 708.58
+    },
+    {
+        "name": "United Kingdom",
+        "year": "2001",
+        "gdp": 417.01
+    },
+    {
+        "name": "United Kingdom",
+        "year": "2002",
+        "gdp": 863.31
+    },
+    {
+        "name": "United Kingdom",
+        "year": "2003",
+        "gdp": 510.2
+    },
+    {
+        "name": "United Kingdom",
+        "year": "2004",
+        "gdp": 913.22
+    },
+    {
+        "name": "United Kingdom",
+        "year": "2005",
+        "gdp": 534.3
+    },
+    {
+        "name": "United Kingdom",
+        "year": "2006",
+        "gdp": 909.2
+    },
+    {
+        "name": "United Kingdom",
+        "year": "2007",
+        "gdp": 941.18
+    },
+    {
+        "name": "United Kingdom",
+        "year": "2008",
+        "gdp": 411.76
+    },
+    {
+        "name": "United Kingdom",
+        "year": "2009",
+        "gdp": 934.12
+    },
+    {
+        "name": "United Kingdom",
+        "year": "2010",
+        "gdp": 361.11
+    },
+    {
+        "name": "United Kingdom",
+        "year": "2011",
+        "gdp": 646.23
+    },
+    {
+        "name": "United Kingdom",
+        "year": "2012",
+        "gdp": 386.72
+    },
+    {
+        "name": "United Kingdom",
+        "year": "2013",
+        "gdp": 706.81
+    },
+    {
+        "name": "United Kingdom",
+        "year": "2014",
+        "gdp": 208.01
+    },
+    {
+        "name": "United Kingdom",
+        "year": "2015",
+        "gdp": 92.51
+    },
+    {
+        "name": "United Kingdom",
+        "year": "2016",
+        "gdp": 13.29
+    },
+    {
+        "name": "United Kingdom",
+        "year": "2017",
+        "gdp": 958.01
+    },
+    {
+        "name": "United Kingdom",
+        "year": "2018",
+        "gdp": 521.96
+    },
+    {
+        "name": "Russian",
+        "year": "2000",
+        "gdp": 96.94
+    },
+    {
+        "name": "Russian",
+        "year": "2001",
+        "gdp": 9.5
+    },
+    {
+        "name": "Russian",
+        "year": "2002",
+        "gdp": 17.86
+    },
+    {
+        "name": "Russian",
+        "year": "2003",
+        "gdp": 1.79
+    },
+    {
+        "name": "Russian",
+        "year": "2004",
+        "gdp": 2.8
+    },
+    {
+        "name": "Russian",
+        "year": "2005",
+        "gdp": 92.39
+    },
+    {
+        "name": "Russian",
+        "year": "2006",
+        "gdp": 78.7
+    },
+    {
+        "name": "Russian",
+        "year": "2007",
+        "gdp": 823.62
+    },
+    {
+        "name": "Russian",
+        "year": "2008",
+        "gdp": 624.78
+    },
+    {
+        "name": "Russian",
+        "year": "2009",
+        "gdp": 201.86
+    },
+    {
+        "name": "Russian",
+        "year": "2010",
+        "gdp": 442.01
+    },
+    {
+        "name": "Russian",
+        "year": "2011",
+        "gdp": 959.78
+    },
+    {
+        "name": "Russian",
+        "year": "2012",
+        "gdp": 945.38
+    },
+    {
+        "name": "Russian",
+        "year": "2013",
+        "gdp": 958.21
+    },
+    {
+        "name": "Russian",
+        "year": "2014",
+        "gdp": 438.46
+    },
+    {
+        "name": "Russian",
+        "year": "2015",
+        "gdp": 577.82
+    },
+    {
+        "name": "Russian",
+        "year": "2016",
+        "gdp": 134.01
+    },
+    {
+        "name": "Russian",
+        "year": "2017",
+        "gdp": 588.26
+    },
+    {
+        "name": "Russian",
+        "year": "2018",
+        "gdp": 149.87
+    },
+    {
+        "name": "Japan",
+        "year": "2000",
+        "gdp": 744.86
+    },
+    {
+        "name": "Japan",
+        "year": "2001",
+        "gdp": 842.72
+    },
+    {
+        "name": "Japan",
+        "year": "2002",
+        "gdp": 969.77
+    },
+    {
+        "name": "Japan",
+        "year": "2003",
+        "gdp": 221.86
+    },
+    {
+        "name": "Japan",
+        "year": "2004",
+        "gdp": 362.11
+    },
+    {
+        "name": "Japan",
+        "year": "2005",
+        "gdp": 912.14
+    },
+    {
+        "name": "Japan",
+        "year": "2006",
+        "gdp": 970.4
+    },
+    {
+        "name": "Japan",
+        "year": "2007",
+        "gdp": 430.57
+    },
+    {
+        "name": "Japan",
+        "year": "2008",
+        "gdp": 114.48
+    },
+    {
+        "name": "Japan",
+        "year": "2009",
+        "gdp": 593.7
+    },
+    {
+        "name": "Japan",
+        "year": "2010",
+        "gdp": 744.41
+    },
+    {
+        "name": "Japan",
+        "year": "2011",
+        "gdp": 823.72
+    },
+    {
+        "name": "Japan",
+        "year": "2012",
+        "gdp": 334.12
+    },
+    {
+        "name": "Japan",
+        "year": "2013",
+        "gdp": 270.83
+    },
+    {
+        "name": "Japan",
+        "year": "2014",
+        "gdp": 937.84
+    },
+    {
+        "name": "Japan",
+        "year": "2015",
+        "gdp": 588.97
+    },
+    {
+        "name": "Japan",
+        "year": "2016",
+        "gdp": 367.51
+    },
+    {
+        "name": "Japan",
+        "year": "2017",
+        "gdp": 538.97
+    },
+    {
+        "name": "Japan",
+        "year": "2018",
+        "gdp": 771.87
+    }
+]

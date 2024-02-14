@@ -1,52 +1,35 @@
 import {
     Button,
     ConfigProvider,
-    Space,
-    Input,
-    ColorPicker,
-    Divider,
     Typography,
-    Dropdown,
     theme,
     Layout,
     Menu,
     Badge,
+    Switch,
 } from "antd";
-import logo from "./../assets/logo.png";
 import React, { useEffect, useState } from "react";
-import tinycolor from "tinycolor2";
-import Logo from "../assets/logo";
-import { useNavigate } from "react-router-dom";
-import { DownOutlined } from "@ant-design/icons";
-import {
-    SettingOutlined,
-    EditOutlined,
-    EllipsisOutlined,
-} from "@ant-design/icons";
+import { Link, useNavigate } from "react-router-dom";
 import {
     MenuFoldOutlined,
     MenuUnfoldOutlined,
-    UploadOutlined,
-    UserOutlined,
-    VideoCameraOutlined,
 } from '@ant-design/icons';
-// import Sider from "antd/es/layout/Sider";
 import { LuLayoutDashboard } from "react-icons/lu";
-import { GrTransaction } from "react-icons/gr";
-import { ImStatsBars2 } from "react-icons/im";
-import { LiaWalletSolid } from "react-icons/lia";
-import { TbMessage } from "react-icons/tb";
-import { GoShieldLock } from "react-icons/go";
-import { SlLock } from "react-icons/sl";
 import { IoSettingsOutline } from "react-icons/io5";
 import { LiaSitemapSolid } from "react-icons/lia";
+import { PiUsers } from "react-icons/pi";
+import { GrUserAdmin } from "react-icons/gr";
+import { RiAdminLine } from "react-icons/ri";
+import { SiAwsorganizations } from "react-icons/si";
+import { CiCircleQuestion } from "react-icons/ci";
+import { LiaClipboardListSolid } from "react-icons/lia";
 
 const { Header, Sider, Content } = Layout;
 const { Text } = Typography;
 const { useToken } = theme;
 
 const AdminLayout = ({ children }) => {
-    const [primary, setPrimary] = useState("#1D6E71"); // Corrected initial color
+    const [primary, setPrimary] = useState("#FFFFFF"); // Corrected initial color
     const [collapsed, setCollapsed] = useState(false);
     const {
         token: { colorBgContainer, borderRadiusLG },
@@ -159,168 +142,158 @@ const AdminLayout = ({ children }) => {
         setRelatedColors(generateRelatedColorsWithTextContrast(primary));
     }, [primary]);
 
-    const items = [
-        {
-            key: "1",
-            // type: "group",
-            label: <Text className="text-blue-900">Home & garden</Text>,
-            children: [
-                {
-                    key: "1-1",
-                    label: <Text className="text-gray-500">Kitchen</Text>,
-                },
-                {
-                    key: "1-2",
-                    label: <Text className="text-gray-500">Sanitary</Text>,
-                },
-            ],
-        },
-        {
-            key: "2",
-            label: (
-                <div>
-                    <Text className="text-blue-900">Makeup</Text>
-                </div>
-            ),
-            // type: "group",
-            children: [
-                {
-                    key: "2-1",
-                    label: <Text className="text-gray-500">Brushes</Text>,
-                },
-                {
-                    key: "2-2",
-                    label: <Text className="text-gray-500">Makeup Kits</Text>,
-                },
-            ],
-        },
-    ];
     const { token } = useToken();
+
+    const onSwitchChange = (val) => {
+        if (val) {
+            setPrimary("#000829")
+        } else {
+            setPrimary("#FFFFFF")
+        }
+    }
 
     return (
         <ConfigProvider
             theme={{
                 token: {
                     colorPrimary: primary,
-                    colorLink: relatedColors.textContrastColor,
+                    colorBgBase: primary === "#FFFFFF" ? "#ebebf2" : relatedColors.darker,
+                    colorBgContainer: primary,
+                    colorLink: primary === "#FFFFFF" ? "#1420ff" : "white",
                     colorLinkHover: relatedColors.linkHoverColor,
-                    colorText: relatedColors.darker,
+                    colorText: primary === "#FFFFFF" ? "#1420ff" : "white",
                     colorSuccessText: "red",
-                    colorTextLabel: relatedColors.darker,
-                    colorTextDescription: relatedColors.darker,
-                    colorIcon: relatedColors.darker,
+                    colorTextLabel: primary === "#FFFFFF" ? "#1420ff" : "white",
+                    colorTextBase: primary === "#FFFFFF" ? "#1420ff" : "white",
+                    colorTextSecondary: primary === "#FFFFFF" ? "#1420ff" : "white",
+                    colorTextHeading: primary === "#FFFFFF" ? "#1420ff" : "white",
+                    colorTextTertiary: primary === "#FFFFFF" ? "#1420ff" : "white",
+                    colorTextDescription: primary === "#FFFFFF" ? "#1420ff" : "white",
+                    colorIcon: primary === "#FFFFFF" ? "#1420ff" : "white",
                     colorIconHover: relatedColors.textContrastColor,
                 },
             }}
         >
             <Layout>
-                <Sider style={{ backgroundColor: relatedColors.lighter, borderRight: `1px solid ${relatedColors.darker}` }} width={300} trigger={null} collapsible collapsed={collapsed}>
-                    <div className="h-20 flex justify-center items-center" style={{ borderBottom: `1px solid ${relatedColors.darker}` }} >
-                        <Text
+                <Sider style={{ backgroundColor: primary }} width={300} trigger={null} collapsible collapsed={collapsed}>
+                    <div className="py-6 flex justify-center items-center" >
+                        {/* <Text
                             style={{ color: relatedColors.textContrastColor, fontFamily: "monospace" }}
                             className="text-2xl"
                         >
                             Admin Panel
-                        </Text>
+                        </Text> */}
+                        <div className="w-full h-24 flex justify-center items-center">
+                            {
+                                primary === "#FFFFFF" ?
+                                    <img src="../assets/logo.png" alt="sabhi" className="w-full" />
+                                    :
+                                    <img src="../assets/logo-dark.png" alt="sabhi" className="w-full" />
+                            }
+                        </div>
                     </div>
                     <Menu
                         // theme="dark"
                         className="py-5"
-                        style={{ borderBottom: `1px solid ${relatedColors.darker}`, }}
+                        style={{ backgroundColor: "rgba(0,0,0,0)", }}
                         mode="inline"
-
-                        defaultSelectedKeys={['1']}
+                        defaultOpenKeys={['2']}
+                        selectedKeys={window.location.pathname === "/admin/dashboard" ? "1" :
+                            window.location.pathname === "/admin/company-admins" ? "2-1" :
+                                window.location.pathname === "/admin/super-admins" ? "2-2" :
+                                    "3"}
                         items={[
                             {
                                 key: '1',
-                                icon: <GrTransaction />,
-                                label: <div className="flex items-center justify-between px-2"><Text>Dashboard</Text> <Badge
+                                icon: <LuLayoutDashboard style={{ color: primary === "#FFFFFF" ? "#1420ff" : "white" }} />,
+                                label: <Link to="/admin/dashboard"><div className="flex items-center justify-between px-2"><Text >Dashboard</Text> <Badge
                                     className="site-badge-count-109"
                                     count={109}
-                                    style={{ backgroundColor: primary }}
-                                /></div>,
+                                    style={{ backgroundColor: "#1420ff", color: "white" }}
+                                /></div></Link>,
                             },
                             {
                                 key: '2',
-                                icon: <LuLayoutDashboard />,
-                                label: <div className="flex items-center justify-between px-2"><Text>Transactions</Text> <Badge
+                                icon: <PiUsers style={{ color: primary === "#FFFFFF" ? "#1420ff" : "white" }} />,
+                                label: <div className="flex items-center justify-between px-2"><Text>Users</Text> <Badge
                                     className="site-badge-count-109"
                                     count={0}
-                                    style={{ backgroundColor: primary }}
+                                    style={{ backgroundColor: "#1420ff", color: "white" }}
                                 /></div>,
+                                children: [
+                                    {
+                                        key: '2-1',
+                                        icon: <GrUserAdmin style={{ color: primary === "#FFFFFF" ? "#1420ff" : "white" }} />,
+                                        label: <Link to="/admin/company-admins"><div className="flex items-center justify-between px-2"><Text>Company Admins</Text> <Badge
+                                            className="site-badge-count-109"
+                                            count={0}
+                                            style={{ backgroundColor: "#1420ff", color: "white" }}
+                                        /></div></Link>,
+                                    },
+                                    {
+                                        key: '2-2',
+                                        icon: <RiAdminLine style={{ color: primary === "#FFFFFF" ? "#1420ff" : "white" }} />,
+                                        label: <Link to="/admin/super-admins"><div className="flex items-center justify-between px-2"><Text>Super Admins</Text> <Badge
+                                            className="site-badge-count-109"
+                                            count={0}
+                                            style={{ backgroundColor: "#1420ff", color: "white" }}
+                                        /></div></Link>,
+                                    },
+                                ]
                             },
                             {
                                 key: '3',
-                                icon: <ImStatsBars2 />,
-                                label: <div className="flex items-center justify-between px-2"><Text>Statistics</Text> <Badge
+                                icon: <SiAwsorganizations style={{ color: primary === "#FFFFFF" ? "#1420ff" : "white" }} />,
+                                label: <Link to="/admin/dashboard"><div className="flex items-center justify-between px-2"><Text>Companies</Text> <Badge
                                     className="site-badge-count-109"
                                     count={0}
-                                    style={{ backgroundColor: primary }}
-                                /></div>,
+                                    style={{ backgroundColor: "#1420ff", color: "white" }}
+                                /></div></Link>,
                             },
                             {
                                 key: '4',
-                                icon: <LiaWalletSolid />,
-                                label: <div className="flex items-center justify-between px-2"><Text>Wallet</Text> <Badge
+                                icon: <CiCircleQuestion style={{ color: primary === "#FFFFFF" ? "#1420ff" : "white" }} />,
+                                label: <Link to="/admin/dashboard"><div className="flex items-center justify-between px-2"><Text>Questions</Text> <Badge
                                     className="site-badge-count-109"
                                     count={0}
-                                    style={{ backgroundColor: primary }}
-                                /></div>,
+                                    style={{ backgroundColor: "#1420ff", color: "white" }}
+                                /></div></Link>,
                             },
                             {
                                 key: '5',
-                                icon: <TbMessage />,
-                                label: <div className="flex items-center justify-between px-2"><Text>Messages</Text> <Badge
+                                icon: <LiaClipboardListSolid style={{ color: primary === "#FFFFFF" ? "#1420ff" : "white" }} />,
+                                label: <Link to="/admin/dashboard"><div className="flex items-center justify-between px-2"><Text>Challanges</Text> <Badge
                                     className="site-badge-count-109"
                                     count={3}
-                                    style={{ backgroundColor: primary }}
-                                /></div>,
+                                    style={{ backgroundColor: "#1420ff", color: "white" }}
+                                /></div></Link>,
                             }
                         ]}
                     />
                     <Menu
                         // theme="dark"
                         className="py-5"
-                        // style={{ backgroundColor: "rgba(0,0,0,0)", }}
+                        style={{ backgroundColor: "rgba(0,0,0,0)", }}
                         mode="inline"
-
-                        defaultSelectedKeys={['1']}
+                        defaultOpenKeys={['6']}
                         items={[
                             {
                                 key: '6',
-                                icon: <GoShieldLock />,
-                                label: <div className="flex items-center justify-between px-2"><Text>Authentication</Text> <Badge
-                                    className="site-badge-count-109"
-                                    count={0}
-                                    style={{ backgroundColor: primary }}
-                                /></div>
-                            },
-                            {
-                                key: '7',
-                                icon: <SlLock />,
-                                label: <div className="flex items-center justify-between px-2"><Text>API Keys</Text> <Badge
-                                    className="site-badge-count-109"
-                                    count={0}
-                                    style={{ backgroundColor: primary }}
-                                /></div>
-                            },
-                            {
-                                key: '8',
-                                icon: <IoSettingsOutline />,
+                                icon: <IoSettingsOutline style={{ color: primary === "#FFFFFF" ? "#1420ff" : "white" }} />,
                                 label: <div className="flex items-center justify-between px-2"><Text>Settings</Text> <Badge
                                     className="site-badge-count-109"
                                     count={0}
-                                    style={{ backgroundColor: primary }}
+                                    style={{ backgroundColor: "#1420ff", color: "white" }}
                                 /></div>,
                                 children: [
                                     {
-                                        key: '2-1',
-                                        icon: <LiaSitemapSolid />,
-                                        label: <div className="flex items-center justify-between px-2"><Text>Item 1</Text> <Badge
+                                        key: '6-1',
+                                        icon: <LiaSitemapSolid style={{ color: primary === "#FFFFFF" ? "#1420ff" : "white" }} />,
+                                        label: <Link to="/admin/dashboard"><div className="flex items-center justify-between px-2"><Text>Item 1</Text> <Badge
                                             className="site-badge-count-109"
-                                            count={20}
-                                            style={{ backgroundColor: primary }}
-                                        /></div>,
+                                            count={0}
+                                            style={{ backgroundColor: "#1420ff", color: "white" }}
+                                        /></div></Link>,
                                     },
                                 ]
                             },
@@ -337,32 +310,33 @@ const AdminLayout = ({ children }) => {
                                 fontSize: '16px',
                                 width: 64,
                                 height: 64,
-                                color: relatedColors.textContrastColor
+                                color: primary === "#FFFFFF" ? "#1420ff" : "white"
                             }}
                         />
                         <div className="flex items-center">
                             <Text
-                                style={{ color: relatedColors.textContrastColor }}
                                 className="mr-2"
                             >
                                 Theme:
                             </Text>
-                            <ColorPicker
+                            {/* <ColorPicker
                                 value={primary}
                                 onChangeComplete={(color) => setPrimary(color.toHexString())}
-                            />
+                            /> */}
+
+                            <Switch style={{ backgroundColor: primary === "#FFFFFF" ? "#b4b4b8" : "#1420ff" }} onChange={onSwitchChange} />
                         </div>
                     </Header>
                     <Content
                         style={{
-                            margin: '24px 16px',
+                            // margin: '24px 16px',
                             padding: 24,
-                            minHeight: "80.1vh",
-                            background: colorBgContainer,
-                            borderRadius: borderRadiusLG,
+                            minHeight: "90.1vh",
+                            background: primary === "#FFFFFF" ? "#ebebf2" : relatedColors.lighter,
+                            // borderRadius: borderRadiusLG,
                         }}
                     >
-                        <div className="mt-24 pt-3">{children}</div>
+                        <div className="">{children}</div>
                     </Content>
                 </Layout>
             </Layout>
@@ -436,7 +410,7 @@ const AdminLayout = ({ children }) => {
                 </div>
                 <div className="mt-24 pt-3">{children}</div>
             </div> */}
-        </ConfigProvider>
+        </ConfigProvider >
     );
 };
 

@@ -1,0 +1,42 @@
+[
+    {
+        "city": "ISB",
+        "type": "tpe",
+        "value": 14500
+    },
+    {
+        "city": "ISB",
+        "type": "LHR",
+        "value": 10000
+    },
+    {
+        "city": "KHI",
+        "type": "tpe",
+        "value": 9000
+    },
+    {
+        "city": "KHI",
+        "type": "LHR",
+        "value": 11000
+    },
+    {
+        "city": "PSH",
+        "type": "tpe",
+        "value": 16000
+    },
+    {
+        "city": "PSH",
+        "type": "LHR",
+        "value": 6000
+    },
+    {
+        "city": "NSR",
+        "type": "tpe",
+        "value": 14000
+    },
+    {
+        "city": "NSR",
+        "type": "LHR",
+        "value": 10000
+    }
+]
