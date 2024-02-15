@@ -1,10 +1,10 @@
 import { Button, Divider, Space, Tag, Typography, theme } from "antd";
 import AdminsTable from "../../components/Tables/AdminsTable";
+import AddCompanyModal from "../../components/Modals/AddCompanyModal";
 import { useState } from "react";
-import AddSuperAdminModal from "../../components/Modals/AddSuperAdminModal";
 
 const { Text } = Typography;
-const SuperAdmins = () => {
+const Companies = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const {
@@ -15,6 +15,12 @@ const SuperAdmins = () => {
             title: 'Name',
             dataIndex: 'name',
             key: 'name',
+            render: (text) => <a>{text}</a>,
+        },
+        {
+            title: 'Email',
+            dataIndex: 'email',
+            key: 'email',
             render: (text) => <a>{text}</a>,
         },
         {
@@ -62,6 +68,7 @@ const SuperAdmins = () => {
         {
             key: '1',
             name: 'John Brown',
+            email: 'john@gmail.com',
             age: 32,
             address: 'New York No. 1 Lake Park',
             tags: ['nice', 'developer'],
@@ -69,6 +76,7 @@ const SuperAdmins = () => {
         {
             key: '2',
             name: 'Jim Green',
+            email: 'jim @gmail.com',
             age: 42,
             address: 'London No. 1 Lake Park',
             tags: ['loser'],
@@ -76,6 +84,7 @@ const SuperAdmins = () => {
         {
             key: '3',
             name: 'Joe Black',
+            email: 'joe @gmail.com',
             age: 32,
             address: 'Sydney No. 1 Lake Park',
             tags: ['cool', 'teacher'],
@@ -83,13 +92,13 @@ const SuperAdmins = () => {
     ];
     return <div style={{ backgroundColor: colorPrimary }}>
         <div className="flex justify-between items-center px-3 py-4 w-full">
-            <Text className="text-3xl font-semibold">Super Admins</Text>
+            <Text className="text-3xl font-semibold">Companies</Text>
             <Button onClick={() => setIsModalOpen(true)} type="link">Add New +</Button>
         </div>
         <Divider style={{ margin: 0 }} />
         <AdminsTable columns={columns} data={data} />
-        <AddSuperAdminModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+        <AddCompanyModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </div>
 }
 
-export default SuperAdmins;
+export default Companies;

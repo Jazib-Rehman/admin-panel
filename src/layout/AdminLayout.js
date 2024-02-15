@@ -244,7 +244,7 @@ const AdminLayout = ({ children }) => {
                             {
                                 key: '3',
                                 icon: <SiAwsorganizations style={{ color: primary === "#FFFFFF" ? "#1420ff" : "white" }} />,
-                                label: <Link to="/admin/dashboard"><div className="flex items-center justify-between px-2"><Text>Companies</Text> <Badge
+                                label: <Link to="/admin/companies"><div className="flex items-center justify-between px-2"><Text>Companies</Text> <Badge
                                     className="site-badge-count-109"
                                     count={0}
                                     style={{ backgroundColor: "#1420ff", color: "white" }}

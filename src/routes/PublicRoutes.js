@@ -12,6 +12,7 @@ import Dashboard from "../pages/Admin/Dashboard";
 import AdminLayout from "../layout/AdminLayout";
 import CompanyAdmins from "../pages/Admin/CompanyAdmins";
 import SuperAdmins from "../pages/Admin/SuperAdmins";
+import Companies from "../pages/Admin/Companies";
 
 const antIcon = <LoadingOutlined style={{ fontSize: 100 }} spin />;
 
@@ -71,6 +72,7 @@ const PublicRoutes = () => {
         <Route path="/admin/dashboard" element={<AdminLayout><Dashboard /></AdminLayout>} />
         <Route path="/admin/company-admins" element={<AdminLayout><CompanyAdmins /></AdminLayout>} />
         <Route path="/admin/super-admins" element={<AdminLayout><SuperAdmins /></AdminLayout>} />
+        <Route path="/admin/companies" element={<AdminLayout><Companies /></AdminLayout>} />
         <Route path="/auth" element={<Welcome />} />
       </Routes>
     </>

@@ -31,12 +31,12 @@ export default function Welcome(props) {
 
   const login = (data) => {
     setLoading(true);
-    navigate("/")
-    // auth.signIn(
-    //   data,
-    //   () => navigate(from),
-    //   () => setLoading(false)
-    // );
+    // navigate("/")
+    auth.signIn(
+      data,
+      () => navigate(from),
+      () => setLoading(false)
+    );
   };
 
   const signup = async (values) => {

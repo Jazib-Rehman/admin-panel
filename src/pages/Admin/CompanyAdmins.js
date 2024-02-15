@@ -1,7 +1,14 @@
-import { Space, Tag, theme } from "antd";
+import { Button, Divider, Space, Tag, Typography, theme } from "antd";
 import AdminsTable from "../../components/Tables/AdminsTable";
+import AddCompanyAdminModal from "../../components/Modals/AddCompanyAdminModal";
+import { useState } from "react";
+import EditCompanyAdminModal from "../../components/Modals/EditCompanyAdminModal";
 
+const { Text } = Typography;
 const CompanyAdmins = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+
     const {
         token: { colorIcon, colorBgContainer, colorPrimary },
     } = theme.useToken();
@@ -53,8 +60,8 @@ const CompanyAdmins = () => {
             key: 'action',
             render: (_, record) => (
                 <Space size="middle">
-                    <a>Invite {record.name}</a>
-                    <a>Delete</a>
+                    <Button type="link" onClick={() => setIsEditModalOpen(true)}>Edit</Button>
+                    <Button type="link" >Delete</Button>
                 </Space>
             ),
         },
@@ -86,7 +93,14 @@ const CompanyAdmins = () => {
         },
     ];
     return <div style={{ backgroundColor: colorPrimary }}>
+        <div className="flex justify-between items-center px-3 py-4 w-full">
+            <Text className="text-3xl font-semibold">Company Admins</Text>
+            <Button onClick={() => setIsModalOpen(true)} type="link">Add New +</Button>
+        </div>
+        <Divider style={{ margin: 0 }} />
         <AdminsTable columns={columns} data={data} />
+        <EditCompanyAdminModal isModalOpen={isEditModalOpen} setIsModalOpen={setIsEditModalOpen} />
+        <AddCompanyAdminModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </div>
 }
 
